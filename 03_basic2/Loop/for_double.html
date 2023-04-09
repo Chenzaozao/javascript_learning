@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var rows = prompt("行数");
+      var cols = prompt("列数");
+      var str = "";
+      for (var i = 1; i <= rows; i++) {
+        for (var j = 1; j <= cols; j++) {
+          str += "⭐";
+        }
+        str += "\n";
+      }
+      console.log(str);
+
+      var str = "";
+      for (var i = 1; i <= 5; i++) {
+        for (var j = i; j <= 5; j++) {
+          str += "⭐";
+        }
+        str += "\n";
+      }
+      console.log(str);
+
+      var str = "";
+      for (var i = 1; i <= 9; i++) {
+        for (var j = 1; j <= i; j++) {
+          str += j + "x" + i + "=" + i * j + "\t";
+        }
+        str += "\n";
+      }
+      console.log(str);
+    </script>
+  </head>
+  <body></body>
+</html>
