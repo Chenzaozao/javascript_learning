@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //新数组元素都大于等于10
+      var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+      var newArr = [];
+      var j = 0;
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] >= 10) {
+          // 也可以用newArr[newArr.length]代替
+          newArr[j++] = arr[i];
+        }
+      }
+      console.log(newArr);
+    </script>
+  </head>
+  <body></body>
+</html>

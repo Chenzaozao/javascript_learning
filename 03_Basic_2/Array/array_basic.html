@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var arr_zero = ["苹果", "橘子", "香蕉", "桃子"];
+      console.log(arr_zero[0]);
+      console.log(arr_zero[1]);
+      console.log(arr_zero[2]);
+      console.log(arr_zero[3]);
+      console.log(arr_zero[4]);
+
+      var arr = [80, 75, 69, 95, 92, 88, 76];
+
+      var sum1 = 0;
+      for (var i = 0; i < 7; i++) {
+        sum1 += arr[i];
+      }
+      var avg1 = sum1 / 7;
+      console.log(avg1.toFixed(2));
+
+      // 常用arr.length做条件表达式
+      var sum2 = 0;
+      for (var i = 0; i < arr.length; i++) {
+        sum2 += arr[i];
+      }
+      var avg2 = sum2 / arr.length;
+      console.log(avg2.toFixed(2));
+    </script>
+  </head>
+  <body></body>
+</html>
