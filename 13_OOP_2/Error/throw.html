@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      try {
+        var e1 = new Error('错误信息'); 
+        throw e1;  
+      } catch (e) {
+        console.log(e.message); 
+        console.log(e1 === e);  
+      }
+    </script>
+  </body>
+</html>

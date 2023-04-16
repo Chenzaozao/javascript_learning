@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>验证身份证号码</title>
+  </head>
+  <body>
+    <form id="form">
+      身份证号码：<input type="text" name="card">
+    </form>
+    <div id="result"></div>
+    <script>
+      var form = document.getElementById('form');           // <form>元素对象
+      var result = document.getElementById('result');       // <div>元素对象
+      var inputs = document.getElementsByTagName('input');  // <input>元素集合
+
+      if (!String.prototype.trim) {
+        String.prototype.trim = function () {
+          return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+        };
+      }
+
+      inputs.card.onblur = function () {
+        this.value = this.value.trim();
+        var reg = /(^\d{15}$)|(^\d{17}([0-9]|X)$)/;
+        if (reg.test(form.card.value)) {
+          result.style.color = 'green';
+          result.innerHTML = '恭喜您，输入正确！';
+          return false;
+        } else {
+          result.style.color = 'redgreen';
+          result.innerHTML = '输入错误，您输入的为非法字符！';
+          return true;
+        }
+      };
+    </script>
+  </body>
+</html>

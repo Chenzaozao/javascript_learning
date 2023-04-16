@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Father(uname, age) {      
+        this.uname = uname;
+        this.age = age;
+      }
+      function Son(uname, age, score) {  
+        Father.call(this, uname, age);   
+        this.score = score;             
+      }
+      var son = new Son('张三', 18, 100);
+      console.log(son); 
+    </script>
+  </body>
+</html>

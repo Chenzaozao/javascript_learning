@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Person(uname) {
+        this.uname = uname;
+      }
+      Person.prototype.sayHello = function () {
+        console.log('你好，我叫' + this.uname);
+      };
+      var p1 = new Person('张三');
+      var p2 = new Person('李四');
+      console.log(p1.sayHello === p2.sayHello);	
+      p1.sayHello();		
+      p2.sayHello();		
+    </script>
+  </body>
+</html>

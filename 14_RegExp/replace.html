@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>内容查找与替换</title>
+    <style>
+      div {
+        float: left;
+        margin-left: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>过滤前内容:<br>
+      <textarea id="pre" rows="10" cols="40"></textarea>
+      <input id="btn" type="button" value="过滤">
+    </div>
+    <div>过滤后内容:<br>
+      <textarea id="res" rows="10" cols="40"></textarea>
+    </div>
+    <script>
+      document.getElementById('btn').onclick = function () {
+        
+        var reg = /(bad)|[\u4e00-\u9fa5]/gi;
+        var str = document.getElementById('pre').value;
+        var newstr = str.replace(reg, '*');
+        document.getElementById('res').innerHTML = newstr;
+      };
+    </script>
+  </body>
+</html>

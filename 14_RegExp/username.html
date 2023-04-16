@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>用户名验证</title>
+    <style>
+      .success {
+        color: green;
+      }
+
+      .wrong {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" class="uname"><span></span>
+    <script>
+      var reg = /^[a-zA-Z0-9_-]{6,16}$/;
+      var uname = document.querySelector('.uname');
+      var span = document.querySelector('span');
+      uname.onblur = function () {
+        if (reg.test(this.value)) {
+          span.className = 'success';
+          span.innerHTML = '用户名合法！';
+        } else {
+          span.className = 'wrong';
+          span.innerHTML = '用户名不符合规范！';
+        }
+      };
+    </script>
+  </body>
+</html>

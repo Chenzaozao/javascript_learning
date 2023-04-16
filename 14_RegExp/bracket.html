@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var res = '1234'.match(/(\d)(\d)(\d)(\d)/);
+      console.log(res);
+
+      var str = 'Regular Capture';
+      var reg = /(\w+)\s(\w+)/gi;
+      var newstr = str.replace(reg, '$2 $1');
+      console.log(newstr); 
+
+      
+      var reg = /(?:J)(?:S)/;
+      var res = 'JS'.replace(reg, '$2 $1');
+      console.log(res); 
+
+      
+      var reg = /(J)(S)/;
+      var res = 'JS'.replace(reg, '$2 $1');
+      console.log(res); 
+
+      var str = 'webWEBWebwEb';
+      var reg1 = /w.*b/gi;    
+      var reg2 = /w.*?b/gi;   
+      
+      console.log(reg1.exec(str));
+      
+      console.log(reg2.exec(str));
+
+      var str = '13335 12345 56668';
+      var reg = /(\d)\1\1/gi;
+      var match = str.match(reg);
+      console.log(match); 
+    </script>
+  </body>
+</html>

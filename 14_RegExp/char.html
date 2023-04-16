@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var reg = /[abc]/;
+      console.log(reg.test('andy'));   
+      console.log(reg.test('baby'));   
+      console.log(reg.test('color'));  
+      console.log(reg.test('red'));    
+      var rg = /^[abc]$/;
+      console.log(rg.test('a'));      
+      console.log(rg.test('aa'));      
+      console.log(rg.test('b'));      
+      console.log(rg.test('c'));       
+      console.log(rg.test('abc'));     
+
+      var rg = /^[a-z]$/;
+      console.log(rg.test('a'));       
+      console.log(rg.test('z'));       
+
+      var rg =  /^[a-zA-Z0-9_-]$/; 
+    </script>
+  </body>
+</html>
