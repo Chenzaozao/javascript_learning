@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var year = prompt('请输入年份');
+      if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+        alert('您输入的年份是闰年');
+      } else {
+        alert('您输入的年份是平年');
+      }
+    </script>
+  </body>
+</html>
