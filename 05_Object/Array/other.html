@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var arr = ['sky', 'wind', 'snow', 'sun'];
+      // 从索引为2的位置开始，删除2个元素
+      arr.splice(2, 2);
+      console.log(arr);		// 输出结果：(2) ["sky", "wind"]
+      // 从索引为1的位置开始，删除1个元素后，再添加snow元素
+      arr.splice(1, 1, 'snow');
+      console.log(arr);		// 输出结果：(2) ["sky", "snow"]
+      // 从索引为1的位置开始，添加数组元素
+      arr.splice(1, 0, 'hail', 'sun');
+      console.log(arr);		// 输出结果：(4) ["sky", "hail", "sun", "snow"]
+    </script>
+  </body>
+</html>

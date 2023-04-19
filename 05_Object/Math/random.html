@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+      console.log(getRandom(1, 3));	// 最小值1，最大值3
+
+      var arr = ['apple', 'banana', 'orange', 'pear'];
+      // 调用前面编写的getRandom()函数获取随机数
+      console.log(arr[getRandom(0, arr.length - 1)]);
+    </script>
+  </body>
+</html>

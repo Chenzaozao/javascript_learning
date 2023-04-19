@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var str = 'HelloWorld';
+      str.concat('!');	     // 在字符串末尾拼接字符，结果：HelloWorld!
+      str.slice(1, 3);       // 截取从位置1开始包括到位置3的范围内的内容，结果为：el
+      str.substring(5);      // 截取从位置5开始到最后的内容，结果：World
+      str.substring(5, 7);   // 截取从位置5开始到位置7范围内的内容，结果：Wo
+      str.substr(5);		     // 截取从位置5开始到字符串结尾的内容，结果：World
+      str.substring(5, 7);   // 截取从位置5开始到位置7范围内的内容，结果：Wo
+      str.toLowerCase();	   // 将字符串转换为小写，结果：helloworld
+      str.toUpperCase();	   // 将字符串转换为大写，结果：HELLOWORLD
+      str.split('l');		     // 使用“l”切割字符串，结果：["He", "", "oWor", "d"]
+      console.log(str.split('l', 3))	   // 限制最多切割3次，结果：["He", "", "oWor"]
+      str.replace('World', '!'); // 替换字符串，结果："Hello!"
+    </script>
+  </body>
+</html>

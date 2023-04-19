@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var name = prompt('请输入用户名');
+      if (name.length < 3 || name.length > 10) {
+        alert('用户名长度必须在3~10之间。');
+      } else if (name.toLowerCase().indexOf('admin') !== -1) {
+        alert('用户名中不能包含敏感词：admin。');
+      } else {
+        alert('恭喜您，该用户名可以使用');
+      }
+    </script>
+  </body>
+</html>

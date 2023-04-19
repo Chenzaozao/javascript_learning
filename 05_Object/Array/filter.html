@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var arr = [1500, 1200, 2000, 2100, 1800];
+      var newArr = [];
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] < 2000) {
+          newArr.push(arr[i]);	// 相当于：newArr[newArr.length] = arr[i];
+        }
+      }
+      console.log(newArr);		  // 输出结果：(3) [1500, 1200, 1800]
+    </script>
+  </body>
+</html>

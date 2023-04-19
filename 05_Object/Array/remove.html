@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function unique(arr) {
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+          if (newArr.indexOf(arr[i]) === -1) {
+            newArr.push(arr[i]);
+          }
+        }
+        return newArr;
+      }
+      var demo = unique(['blue', 'green', 'blue']);
+      console.log(demo);	// 输出结果：(4) ["blue", "green"]
+    </script>
+  </body>
+</html>

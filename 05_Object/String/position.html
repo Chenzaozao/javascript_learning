@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var str = "Hello World, Hello JavaScript";
+      var index = str.indexOf("o");
+      var num = 0;
+      while (index != -1) {
+        console.log(index); // 依次输出：4、7、17
+        index = str.indexOf("o", index + 1);
+        num++;
+      }
+      console.log("o出现的次数是：" + num); // o出现的次数是：3
+
+      var str = "Apple";
+      console.log(str.charAt(3)); // 输出结果：1
+      console.log(str.charCodeAt(0)); // 输出结果：65（字符A的ASCII码为65）
+      console.log(str[0]); // 输出结果：A
+    </script>
+  </body>
+</html>

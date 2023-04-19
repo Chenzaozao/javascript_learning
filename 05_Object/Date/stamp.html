@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var timestamp1 = +new Date();
+      for (var i = 1, str = ''; i <= 90000; i++) {
+        str += i;
+      }
+      var timestamp2 = +new Date();
+      // 示例结果：代码执行时间：37毫秒
+      console.log('代码执行时间：' + (timestamp2 - timestamp1) + '毫秒');
+    </script>
+  </body>
+</html>

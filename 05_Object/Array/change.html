@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var arr = ['Rose', 'Lily'];
+      console.log('原数组：' + arr);
+      var last = arr.pop();
+      console.log('在末尾移出元素：' + last + ' - 移出后数组：' + arr);
+      var len = arr.push('Tulip', 'Jasmine');
+      console.log('在末尾添加元素后长度变为：' + len + ' - 添加后数组：' + arr);
+      var first = arr.shift();
+      console.log('在开头移出元素：' + first + ' - 移出后数组：' + arr);
+      len = arr.unshift('Balsam', 'sunflower');
+      console.log('在开头添加元素后长度变为：' + len + ' - 添加后数组：' + arr);
+    </script>
+  </body>
+</html>

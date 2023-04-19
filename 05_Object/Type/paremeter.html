@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function change(obj) {
+        obj.name = '小红';		// 在函数内修改了对象的属性
+      }
+      var stu = { name: '小明', age: 18 };
+      change(stu);
+      console.log(stu.name);	// 输出结果：小红
+    </script>
+  </body>
+</html>
