@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function isLeapYear(year) {
+        var flag = false;
+        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+          flag = true;
+        }
+        return flag;
+      }
+      console.log(isLeapYear(2020) ? "2020是闰年" : "2020是平年");
+      console.log(isLeapYear(2021) ? "2021是闰年" : "2021是平年");
+    </script>
+  </body>
+</html>

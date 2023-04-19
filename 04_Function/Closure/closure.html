@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function fn() {
+        var times = 0;
+        var c = function () {
+          return ++times;
+        };
+        return c;
+      }
+      var count = fn();
+      console.log(count());
+      console.log(count());
+      console.log(count());
+      console.log(count());
+      console.log(count());
+    </script>
+  </body>
+</html>
