@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      // 根据系统不同时间来判断，所以需要用到日期内置对象
+      // 利用多分支语句来设置不同的图片
+      // 1.获取元素
+      var div = document.querySelector("div");
+      // 2. 得到当前的小时数
+      var h = new Date().getHours();
+      // 3. 判断小时数改变文字信息
+      if (h < 6) {
+        document.write("凌晨好");
+      } else if (h < 9) {
+        document.write("早上好!");
+      } else if (h < 12) {
+        document.write("上午好!");
+      } else if (h < 14) {
+        document.write("中午好!");
+      } else if (h < 17) {
+        document.write("下午好!");
+      } else if (h < 19) {
+        document.write("傍晚好!");
+      } else if (h < 22) {
+        document.write("晚上好!");
+      } else {
+        document.write("夜里好!");
+      }
+
+      var obj = ((a, b) => a * b)(6, 2);
+      console.log(obj);
+    </script>
+  </body>
+</html>
