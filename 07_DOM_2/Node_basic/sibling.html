@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <ol>
+      <li>我是li</li>
+      <li>我是li</li>
+      <li>我是li</li>
+      <li>我是li</li>
+    </ol>
+    <script>
+      var ul = document.querySelector('ol');
+      var lis = ul.querySelectorAll('li');
+      console.log(ul.children);
+
+      function getNextElementSibling(element) {
+        var el = element;
+        while (el = el.nextSibling) {
+          if (el.nodeType === 1) {
+            return el;
+          }
+        }
+        return null;
+      }
+    </script>
+  </body>
+</html>
