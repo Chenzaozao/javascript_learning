@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <button>点我</button>
+    <script>
+      var btn = document.querySelector('button');
+      btn.onclick = function (e) {
+        console.log(e.pageX);
+        console.log(e.pageY);
+        var pageX = event.pageX || event.clientX + (document.body.scrollLeft || document.documentElement.scrollLeft);
+        var pageY = event.pageY || event.clientY + (document.body.scrollTop || document.documentElement.scrollTop);
+        console.log(pageX);
+        console.log(pageY);
+      };
+    </script>
+  </body>
+</html>

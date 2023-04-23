@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="t">test</div>
+    <script>
+      var obj = document.getElementById('t');
+      // 添加第1个事件处理程序
+      obj.addEventListener('click', function () {
+        console.log('one');
+      });
+      // 添加第2个事件处理程序
+      obj.addEventListener('click', function () {
+        console.log('two');
+      });
+    </script>
+  </body>
+</html>

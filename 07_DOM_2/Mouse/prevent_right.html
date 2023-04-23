@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      document.addEventListener('contextmenu', function (e) {
+        console.log('鼠标右键已被禁用');
+        e.preventDefault();
+      });
+    </script>
+  </body>
+</html>

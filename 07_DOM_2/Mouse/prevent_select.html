@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <div>测试文本 测试文本 测试文本</div>
+    <script>
+      document.addEventListener('selectstart', function (e) {
+        console.log('鼠标选中已被禁用');
+        e.preventDefault();
+      });
+    </script>
+  </body>
+</html>

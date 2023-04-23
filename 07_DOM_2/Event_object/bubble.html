@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="a">
+      <div id="b">点我</div>
+    </div>
+    <script>
+      var a = document.querySelector('#a');
+      a.onclick = function () {
+        console.log('a被单击了');
+      };
+      var b = document.querySelector('#b');
+      b.onclick = function (e) {
+        console.log('b被单击了');
+        if (window.event) {		// 早期版本的浏览器
+          window.event.cancelBubble = true;
+        } else {					    // 标准浏览器
+          e.stopPropagation();
+        }
+      };
+    </script>
+  </body>
+</html>
