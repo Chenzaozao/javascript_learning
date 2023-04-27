@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 第3部分，单击弹出遮罩层部分样式 */
+      .login-header {
+        width: 100%;
+        text-align: center;
+        font-size: 20pt;
+        position: absolute;
+      }
+
+      /* 第2部分，模态框样式 */
+      .modal {
+        /* 模态框页面居中显示 */
+        width: 500px;
+        height: 200px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        box-shadow: 0px 0px 20px #ddd;
+        z-index: 999;
+        cursor: move;
+      }
+
+      .modal form {
+        /* 表单结构 */
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+      }
+
+      .modal form .item1 {
+        /* 表单标题 */
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold
+      }
+
+      .modal form .item2 {
+        /* 表单输入框 */
+        margin: 0 auto;
+        width: 70%;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .username {
+        margin-left: 16px;
+      }
+
+      .vip {
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        padding: 3px 40px;
+        background-color: orange;
+        color: #fff;
+      }
+
+      .close {
+        /* 关闭按钮 */
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        border: 1px solid #ccc;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 17px;
+        border-radius: 50%;
+        background-color: white
+      }
+
+      /* 第1部分，遮罩层样式 */
+      .login-bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ccc;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 遮罩层 -->
+    <div class="login-bg"></div>
+    <!-- 模态框 -->
+    <div class="modal">
+      <form>
+        <div class="item1">登录会员</div>
+        <div class="item2">
+          <div class="username">
+            <label for="username">用户名：</label>
+            <input type="text" name="username" />
+          </div>
+          <div>
+            <label for="password">登录密码：</label>
+            <input type="text" name="password" />
+          </div>
+        </div>
+        <div class="item1">
+          <div class="vip">登录会员</div>
+        </div>
+      </form>
+      <!-- 模态框关闭按钮 -->
+      <div class="close">x</div>
+    </div>
+    <!-- 单击弹出遮罩层 -->
+    <div class="login-header">单击，登录会员...</div>
+    <script>
+        // 获取元素对象
+        var modal = document.querySelector('.modal');
+        var close = document.querySelector('.close');
+        var login = document.querySelector('.login-header');
+        var bg = document.querySelector('.login-bg');
+        // 单击弹出遮罩层和模态框
+        login.addEventListener('click', function () {
+          modal.style.display = 'block';
+          bg.style.display = 'block';
+          modal.style.backgroundColor = 'white';
+        });
+        // 单击关闭模态框
+        close.addEventListener('click', function () {
+          modal.style.display = 'none';
+          bg.style.display = 'none';
+        });
+        // 拖动模态框
+        modal.addEventListener('mousedown', function (e) {
+          // 当鼠标按下，获取鼠标在模态框中的坐标；
+          var x = e.pageX - modal.offsetLeft;
+          var y = e.pageY - modal.offsetTop;
+          // 定义事件回调函数
+          var move = function (e) {
+            modal.style.left = e.pageX - x + 'px';
+            modal.style.top = e.pageY - y + 'px';
+          };
+          // 鼠标按下，触发鼠标移动事件
+          document.addEventListener('mousemove', move);
+          // 鼠标抬起，移除鼠标移动事件
+          document.addEventListener('mouseup', function (e) {
+            document.removeEventListener('mousemove', move);
+          });
+        });
+      </script>
+  </body>
+</html>
