@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-3.6.4.min.js"></script>
+  </head>
+  <body>
+    <div>绑定事件</div>
+    <script>
+      // 一次绑定一个事件
+      $("div").on("click", function () {
+        $(this).css("background", "yellow")
+      });
+      // 一次绑定多个事件
+      $("div").on({
+        mouseenter: function () {
+          $(this).css("background", "skyblue");
+        },
+        click: function () {
+          $(this).css("background", "purple");
+        },
+        mouseleave: function () {
+          $(this).css("background", "blue");
+        }
+      });
+      // 为不同事件绑定相同的事件处理函数
+      $("div").on("mouseenter mouseleave", function () {
+        $(this).toggleClass("current");
+      });
+    </script>
+  </body>
+</html>

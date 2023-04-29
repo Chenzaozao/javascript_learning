@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-3.6.4.min.js"></script>
+  </head>
+  <body>
+    <div>绑定事件</div>
+    <script>
+      $("div").click(function () {
+        $(this).css("background", "purple");
+      });
+      $("div").mouseenter(function () {
+        $(this).css("background", "skyblue");
+      });
+    </script>
+  </body>
+</html>

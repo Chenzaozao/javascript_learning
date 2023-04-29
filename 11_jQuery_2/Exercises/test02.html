@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+  <!-- 定义输入框 -->
+  <div id="val">
+    <input type="text">
+  </div>
+
+  <script>
+    // 当失去焦点时，在内部元素的最后面添加span元素，展示“请输入内容信息”
+    $("input").blur(function () {
+      if(!$('input').val()){
+         $("#val").append("<span>请输入内容信息</span>");
+    }
+      });
+      // 当获取焦点时，删除span元素
+      $("input").focus(function () {
+        $("#val>span").remove(); 
+      });
+    </script>
+    
+</body>
+
+</html>

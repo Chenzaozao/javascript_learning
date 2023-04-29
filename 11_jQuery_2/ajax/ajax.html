@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <script>
+      $.ajax({
+        type: 'GET',					       	  // 请求方式
+        url: 'server.html',				      // 请求地址
+        data: { id: 2, name: 'Hello' },	// 发送的数据
+        success: function (msg) {			  // 请求成功后执行的函数
+          console.log(msg);
+        }
+      });
+    </script>
+  </body>
+</html>

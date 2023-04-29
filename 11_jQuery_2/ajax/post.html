@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <script>
+      // $.post()方法（HBuilder内置Web服务器不支持POST方式）
+      $.post('server.html', { id: 1 }, function(data, status) {
+        console.log('服务器返回结果：' + data + '\n请求状态：' + status);
+      });
+    </script>
+  </body>
+</html>

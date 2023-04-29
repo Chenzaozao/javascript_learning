@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <script>
+      var targetObj = {
+        id: 0,
+        msg: { sex: '男' }
+      };
+      var obj = {
+        id: 1,
+        name: "andy",
+        msg: { age: 18 }
+      };
+      $.extend(targetObj, obj);	// 浅拷贝
+      console.log(targetObj);  	// {id: 1, msg: {age: 18}, name: "andy"}
+      targetObj.msg.age = 20;		// targetObj.msg和obj.msg是同一个对象
+      console.log(obj.msg.age);	// 输出结果：20
+    </script>
+  </body>
+</html>

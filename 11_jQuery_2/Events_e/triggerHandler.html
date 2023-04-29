@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-3.6.4.min.js"></script>
+  </head>
+  <body>
+    <input type="text">
+    <script>
+      $("input").on("focus", function () {
+        $(this).val("你好吗");
+      });
+      $("input").triggerHandler("focus");	// 触发事件
+    </script>
+  </body>
+</html>

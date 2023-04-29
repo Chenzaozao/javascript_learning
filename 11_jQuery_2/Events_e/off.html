@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-3.6.4.min.js"></script>
+  </head>
+  <body>
+    <div>我是div</div>
+    <script>
+      $("div").on({
+        click: function () {
+          console.log("我被单击了");
+        },
+        mouseover: function () {
+          console.log("鼠标指针经过我了");
+        }
+      });
+      // 事件解绑
+      // $("div").off();  // 解除div元素的所有事件
+    </script>
+  </body>
+</html>

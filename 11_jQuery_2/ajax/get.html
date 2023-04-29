@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <script>
+      // $.get()方法
+      $.get('server.html', function (data, status) {
+        console.log('服务器返回结果：' + data + '\n请求状态：' + status);
+      });
+    </script>
+  </body>
+</html>

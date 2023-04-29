@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-3.6.4.min.js"></script>
+  </head>
+  <body>
+    <script>
+      var targetObj = {
+        id: 0,
+        msg: { sex: '男' }
+      };
+      var obj = {
+        id: 1,
+        name: "andy",
+        msg: { age: 18 }
+      };
+      $.extend(true, targetObj, obj);
+      // 深拷贝结果：{id: 1, msg: {sex: "男", age: 18}, name: "andy"}
+      console.log(targetObj);
+      targetObj.msg.age = 20;		// targetObj.msg和obj.msg是不同的对象
+      console.log(obj.msg.age);	// 输出结果：18
+    </script>
+  </body>
+</html>

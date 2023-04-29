@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 2000px;
+      }
+
+      .back {
+        position: fixed;
+        width: 50px;
+        height: 50px;
+        background-color: pink;
+        right: 30px;
+        bottom: 100px;
+        display: none;
+      }
+
+      .container {
+        width: 900px;
+        height: 500px;
+        background-color: skyblue;
+        margin: 400px auto;
+      }
+    </style>
+
+    <script src="jquery-3.6.4.min.js"></script>
+  </head>
+  <body>
+    <div class="back">返回顶部</div>
+    <div class="container"></div>
+    <script>
+      var boxTop = $(".container").offset().top;
+      $(window).scroll(function () {
+        if ($(document).scrollTop() >= boxTop) {
+          $(".back").fadeIn();
+        } else {
+          $(".back").fadeOut();
+        }
+      });
+      $(".back").click(function () {
+        $("body, html").stop().animate({
+          scrollTop: 0
+        });
+      });
+    </script>
+  </body>
+</html>
