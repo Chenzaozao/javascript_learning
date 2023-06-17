@@ -1,62 +1,84 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <a id="time"></a>
-    <button onclick="clearInterval(time1)">停止</button>
-    <script type="text/javascript">
-      var time1 = window.setInterval("timeShow()", 1000);
-      timeShow();
-      function timeShow() {
-        var today = new Date(); //获得系统当前时间
-      var intYears = today.getFullYear(); //获得年
-      intMonths = today.getMonth() + 1; //获得月份+1
-      intDates = today.getDate(); //获得天数
-      intHours = today.getHours(); //获得小时
-      intMinutes = today.getMinutes(); //获得分钟
-      intSeconds = today.getSeconds(); //获得秒
-      intWeeks = today.getDay(); //获得星期
-      // 修改格式为 *年*月*日
-      years = intYears + '年';
-      // 如果月份小于10，在月份前面加0
-      intMonths < 10 ? months = '0' + intMonths + '月' : months = intMonths + '月';
-      // 如果日份小于10，在日前面加0
-      intDates < 10 ? dates = '0' + intDates + '日' : dates = intDates + '日';
-      // 修改星期格式
-      var week = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
-      weeks = week[intWeeks] + ' ';
-      // 修改小时格式
-      if (intHours == 0) {
-        hours = '00:';
-      } else if (intHours < 10) {
-        hours = '0' + intHours + ':';
-      } else {
-        hours = intHours + ":";
-      }
-      // 修改分钟格式
-      if (intMinutes == 0) {
-        minutes = '00';
-      } else if (intMinutes < 10) {
-        minutes = '0' + intMinutes;
-      } else {
-        minutes = intMinutes+ ":";
-      }
-      //  修改秒数格式
-      if (intSeconds == 0) {
-        seconds = '00';
-      } else if (intSeconds < 10) {
-        seconds = '0' + intSeconds;
-      } else {
-        seconds = intSeconds;
-      }
-      var timeString = years + months + dates + weeks + hours + minutes+seconds
-      document.getElementById('time').innerHTML = timeString;
-      }
-    </script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            div {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <a id="time"></a>
+            <button onclick="clearInterval(time1)">停止</button>
+        </div>
+        <script type="text/javascript">
+            var time1 = window.setInterval("timeShow()", 1000);
+            timeShow(); //没有这个函数会先空白1s再显示时间
+            function timeShow() {
+                var today = new Date(); //获得系统当前时间
+                var intYears = today.getFullYear(); //获得年
+                intMonths = today.getMonth() + 1; //获得月份+1
+                intDates = today.getDate(); //获得天数
+                intHours = today.getHours(); //获得小时
+                intMinutes = today.getMinutes(); //获得分钟
+                intSeconds = today.getSeconds(); //获得秒
+                intWeeks = today.getDay(); //获得星期
+                // 修改格式为 *年*月*日
+                years = intYears + "年";
+                // 如果月份小于10，在月份前面加0
+                intMonths < 10
+                    ? (months = "0" + intMonths + "月")
+                    : (months = intMonths + "月");
+                // 如果日份小于10，在日前面加0
+                intDates < 10
+                    ? (dates = "0" + intDates + "日")
+                    : (dates = intDates + "日");
+                // 修改星期格式
+                var week = [
+                    "星期日",
+                    "星期一",
+                    "星期二",
+                    "星期三",
+                    "星期四",
+                    "星期五",
+                    "星期六",
+                ];
+                weeks = week[intWeeks] + " ";
+                // 修改小时格式
+                if (intHours == 0) {
+                    hours = "00:";
+                } else if (intHours < 10) {
+                    hours = "0" + intHours + ":";
+                } else {
+                    hours = intHours + ":";
+                }
+                // 修改分钟格式
+                if (intMinutes == 0) {
+                    minutes = "00";
+                } else if (intMinutes < 10) {
+                    minutes = "0" + intMinutes;
+                } else {
+                    minutes = intMinutes + ":";
+                }
+                //  修改秒数格式
+                if (intSeconds == 0) {
+                    seconds = "00";
+                } else if (intSeconds < 10) {
+                    seconds = "0" + intSeconds;
+                } else {
+                    seconds = intSeconds;
+                }
+                var timeString =
+                    years + months + dates + weeks + hours + minutes + seconds;
+                document.getElementById("time").innerHTML = timeString;
+            }
+        </script>
+    </body>
 </html>

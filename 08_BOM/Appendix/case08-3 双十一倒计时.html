@@ -1,0 +1,89 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>双十一倒计时</title>
+        <style>
+            .box {
+                margin: 0 auto;
+                width: 210px;
+            }
+            .box div {
+                width: 50px;
+                height: 50px;
+                border: 1px solid #ccc;
+                /* margin-left: 8px; */
+                line-height: 50px;
+                /* text-align: center; */
+                color: red;
+                float: left;
+                background-color: orange;
+            }
+
+            .double11 {
+                text-align: center;
+                height: 200px;
+                width: 300px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="double11">
+            <h1>距离光棍节，还有</h1>
+            <div class="box">
+                <div id="d"></div>
+                <!-- 剩余的天数 -->
+                <div id="h"></div>
+                <!-- 剩余的小时 -->
+                <div id="m"></div>
+                <!-- 剩余的分钟 -->
+                <div id="s"></div>
+                <!-- 剩余的秒数 -->
+            </div>
+        </div>
+
+        <script>
+            // 设置秒杀结束时间
+            var endTime = new Date("2023-11-10 24:00:00"),
+                endSeconds = endTime.getTime();
+            // 定义变量保存剩余的时间
+            var d = (h = m = s = 0);
+            var dDiv = document.getElementById("d");
+            var hDiv = document.getElementById("h");
+            var mDiv = document.getElementById("m");
+            var sDiv = document.getElementById("s");
+            // 设置定时器，实现限时秒杀效果
+            var id = setInterval(seckill, 1000);
+            seckill();
+            function seckill() {
+                var nowTime = new Date(); // 获取当前时间
+                // 获取时间差，单位为秒
+                var remaining = parseInt(
+                    (endSeconds - nowTime.getTime()) / 1000
+                );
+                if (remaining > 0) {
+                    // 判断秒杀是否过期
+                    // 计算剩余天数（除以60*60*24取整，获取剩余的天数）
+                    d = parseInt(remaining / 86400);
+                    // 计算剩余小时（除以60*60转换为小时，与24取模，获取剩余的小时）
+                    h = parseInt((remaining / 3600) % 24);
+                    // 计算剩余分钟（除以60转为分钟，与60取模，获取剩余的分钟）
+                    m = parseInt((remaining / 60) % 60);
+                    // 计算剩余秒（与60取模，获取剩余的秒数）
+                    s = parseInt(remaining % 60);
+                } else {
+                    clearInterval(id); // 秒杀过期，取消定时器
+                }
+                // 统一利用两位数表示剩余的天、小时、分钟、秒，显示到指定位置
+                dDiv.innerHTML = (d < 10 ? "0" + d : d) + "天";
+                hDiv.innerHTML = (h < 10 ? "0" + h : h) + "时";
+                mDiv.innerHTML = (m < 10 ? "0" + m : m) + "分";
+                sDiv.innerHTML = (s < 10 ? "0" + s : s) + "秒";
+            }
+        </script>
+    </body>
+</html>

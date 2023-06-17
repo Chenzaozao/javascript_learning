@@ -1,30 +1,47 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    手机号码：<input type="number" /><button>发送</button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            div {
+                position: absolute;
+                /* width: 420px;
+                height: 50px; */
+                top: 50%;
+                left: 50%;
+                margin-left: -210px;
+                margin-top: -25px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            手机号码：<input type="number" />&nbsp;&nbsp;&nbsp;
+            <button>发送</button>
+        </div>
 
-    <script>
-      var btn = document.querySelector("button");
-      var time = 60;
-      btn.addEventListener("click", function () {
-        btn.disabled = true;
-        var timer = setInterval(function () {
-          if (time == 0) {
-            clearInterval(timer);
-            btn.disabled = false;
-            btn.innerHTML = "发送";
-          } else {
-            btn.innerHTML = "还剩下" + time + "秒";
-            time--;
-          }
-        }, 1000);
-      });
-    </script>
-  </body>
+        <script>
+            var btn = document.querySelector("button");
+
+            btn.addEventListener("click", function () {
+                btn.disabled = true;
+                var time = 5;
+                var timer = setInterval(function () {
+                    if (time != 0) {
+                        btn.innerHTML = "还剩下" + time + "秒";
+                        time--;
+                    } else {
+                        clearInterval(timer);
+                        btn.disabled = false;
+                        btn.innerHTML = "发送";
+                    }
+                }, 1000);
+            });
+        </script>
+    </body>
 </html>

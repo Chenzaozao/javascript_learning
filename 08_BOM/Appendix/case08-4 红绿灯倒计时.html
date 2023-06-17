@@ -1,0 +1,103 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>红绿灯倒计时</title>
+        <style>
+            .box {
+                width: 250px;
+                height: 52px;
+                padding: 15px 30px;
+                border: 2px solid #ccc;
+                border-radius: 16px;
+                margin: 0 auto;
+            }
+            .box .count {
+                width: 60px;
+                color: #666;
+                font-size: 280%;
+                line-height: 50px;
+                padding-left: 6px;
+                margin-left: 5px;
+                border: 1px solid #fff;
+            }
+            .box div {
+                margin-left: 5px;
+                float: left;
+                width: 50px;
+                height: 50px;
+                border-radius: 50px;
+                border: 1px solid #666;
+            }
+            .gray {
+                background-color: #eee;
+            }
+            .red {
+                background-color: red;
+            }
+            .yellow {
+                background-color: yellow;
+            }
+            .green {
+                background-color: #26ff00;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <div id="red"></div>
+            <div id="yellow"></div>
+            <div id="green"></div>
+            <div class="count" id="count"></div>
+        </div>
+        <script>
+            // 获取红、黄、绿灯以及倒计时的元素对象
+            var lamp = {
+                red: {
+                    obj: document.getElementById("red"),
+                    timeout: 30,
+                    style: ["red", "gray", "gray"],
+                    next: "green",
+                },
+                yellow: {
+                    obj: document.getElementById("yellow"),
+                    timeout: 5,
+                    style: ["gray", "yellow", "gray"],
+                    next: "red",
+                },
+                green: {
+                    obj: document.getElementById("green"),
+                    timeout: 35,
+                    style: ["gray", "gray", "green"],
+                    next: "yellow",
+                },
+                changeStyle(style) {
+                    this.red.obj.className = style[0];
+                    this.yellow.obj.className = style[1];
+                    this.green.obj.className = style[2];
+                },
+            };
+            var count = {
+                obj: document.getElementById("count"),
+                change: function (num) {
+                    this.obj.innerHTML = num < 10 ? "0" + num : num;
+                },
+            };
+            var now = lamp.green;
+            var timeout = now.timeout;
+            lamp.changeStyle(now.style);
+            count.change(timeout);
+            setInterval(next, 1000);
+            function next() {
+                if (--timeout <= 0) {
+                    now = lamp[now.next];
+                    timeout = now.timeout;
+                    lamp.changeStyle(now.style);
+                }
+                count.change(timeout);
+            }
+        </script>
+    </body>
+</html>

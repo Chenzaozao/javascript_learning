@@ -1,0 +1,64 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>页面电子时钟</title>
+        <style>
+            p {
+                text-align: center;
+                font-size: 50px;
+                font-weight: 25px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <p id="clock">在这里显示电子时钟</p>
+        <script type="text/javascript">
+            // 定义显示时间的函数showTime()
+            function showTime() {
+                var now = new Date(); // 获取当前的时间
+                var year = now.getFullYear(); // 年
+                var month = now.getMonth() + 1; // 月
+                var date = now.getDate(); // 日
+                var hour = now.getHours(); // 时
+                var minute = now.getMinutes(); // 分
+                var seconds = now.getSeconds(); // 秒
+                if (month >= 1 && month <= 9) {
+                    month = "0" + month;
+                }
+                if (date >= 0 && date <= 9) {
+                    date = "0" + date;
+                }
+                if (minute >= 0 && minute <= 9) {
+                    minute = "0" + minute;
+                }
+                if (hour >= 0 && hour <= 9) {
+                    hour = "0" + hour;
+                }
+                if (seconds >= 0 && seconds <= 9) {
+                    seconds = "0" + seconds;
+                }
+                var time_text =
+                    year +
+                    "年" +
+                    month +
+                    "月" +
+                    date +
+                    "日" +
+                    hour +
+                    ":" +
+                    minute +
+                    ":" +
+                    seconds;
+                var clock_line = document.getElementById("clock"); // 获取id为clock的p元素
+                clock_line.innerText = time_text; // 给p元素设置内容语法是：element.innerText = string
+                setTimeout("showTime();", 1000); // 设置延时器1秒执行一次showTime()
+            }
+            // 调用函数showTime()
+            showTime();
+        </script>
+    </body>
+</html>
