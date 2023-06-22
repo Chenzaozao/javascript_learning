@@ -1,0 +1,38 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>替换页面元素</title>
+    </head>
+    <body>
+        <div id="Odiv">
+            <p id="p1">我是第一行内容</p>
+            <p id="p2">我是第二行内容</p>
+            <p id="p3">我是第三行内容</p>
+            <p id="p4">我是第四行内容</p>
+        </div>
+        <input
+            type="button"
+            value="将第2行内容替换为JavaScript课程"
+            onClick="replaceNode()" />
+
+        <script type="text/javascript">
+            function replaceNode() {
+                // 获得父元素div
+                var parNode = document.getElementById("Odiv");
+                // 获得div下的第2个p子元素
+                var secondP = document.getElementById("p2");
+                // 创建新的<div> 元素节点
+                var newDiv = document.createElement("div");
+                // 创建文本节点
+                var newText = document.createTextNode("JavaScript课程");
+                // 将文本节点添加到刚创建的新元素div中
+                newDiv.appendChild(newText);
+                // 在父元素中，把第二个p元素替换成新元素div
+                parNode.replaceChild(newDiv, secondP);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>删除页面上的所有p元素</title>
+    </head>
+    <body>
+        <p>什么是JavaScript</p>
+        <p>JavaScript是一门功能强大的编程语言</p>
+        <h1>一起来学习JavaScript程序设计</h1>
+        <hr />
+        <p>JavaScript的发展历史</p>
+        <input type="button" value="删除所有p元素" onclick="delp()" />
+        <script type="text/javascript">
+            function delp() {
+                // 第一种方式
+                var Op = document.getElementsByTagName("p"); //获取所有 <p> 元素
+                for (var i = Op.length - 1; i >= 0; i--) {
+                    // 依次获取p元素节点
+                    var delp = Op[i];
+                    // 使用其父元素的删除方法进行删除
+                    delp.parentNode.removeChild(delp);
+                }
+
+                // 第二种方式
+                // var element
+                // var  Op = document.getElementsByTagName("p");
+                // while (Op.length>0) {
+                //     element = Op[0];
+                //     element.parentElement.removeChild(element);
+                // 	}
+            }
+        </script>
+    </body>
+</html>

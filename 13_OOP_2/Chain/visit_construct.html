@@ -1,22 +1,24 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      function Person() {}
-      Person.prototype = {
-        sayHello: function () {
-          console.log("hello");
-        },
-      };
-      var p1 = new Person();
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function Person() {}
+            Person.prototype = {
+                sayHello: function () {
+                    console.log("hello");
+                },
+            };
+            var p1 = new Person();
 
-      p1.sayHello();
+            p1.sayHello();
 
-      console.log(p1.constructor);
-    </script>
-  </body>
+            console.log(p1.constructor);
+        </script>
+    </body>
 </html>

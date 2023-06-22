@@ -1,0 +1,33 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>删除页面上指定的p元素</title>
+    </head>
+    <body>
+        <p>JavaScript程序设计</p>
+        <div id="Odiv">
+            <p id="p1">什么是JavaScript</p>
+            <p>JavaScript是一门功能强大的编程语言</p>
+            <p>第一部分 JavaScript概述</p>
+            <p>JavaScript的发展历史</p>
+        </div>
+        <input type="button" value="删除p元素" onclick="delp()" />
+        <script type="text/javascript">
+            function delp() {
+                // 第一种方式
+                var Odiv = document.getElementById("Odiv"); // 找到父元素
+                var pi = document.getElementById("p1"); // 找到要删除的子元素
+                Odiv.removeChild(pi); // 将子元素从父元素中删除
+
+                // 第二种方式
+                // var pi = document.getElementById("p1");// 找到要删除的子元素
+                // pi.parentNode.removeChild(pi); // 用其parentNode 属性来找到父元素
+            }
+        </script>
+        <!-- removeChild()方法：删除的节点仍然存在于内存，只是没有添加到当前文档的DOM树中 -->
+        <!-- 这个函数是得到元素的父元素，进行删除的。语法形式为：parent.removeChild(child); -->
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>数组、对象的解构赋值</title>
+    </head>
+
+    <body>
+        <script>
+            // 对象解构允许我们使用变量的名字匹配对象的属性 匹配成功 将对象属性的值赋值给变量
+            // 定义对象person
+            let person = {
+                name: "李四",
+                age: 30,
+                sex: "男",
+            };
+            // 使用let关键字定义{name, age, sex}
+            let { name, age, sex } = person;
+            console.log(name); //李四
+            console.log(age); //30
+            console.log(sex); //男
+            // 使用let关键字定义{ name: myName}
+            let { name: myName } = person;
+            console.log(myName);
+
+            // 数组解构允许我们按照一一对应的关系从数组中提取值 然后将值赋值给变量
+            // 定义数组ary
+            let ary = [1, 2, 3];
+            // 使用let关键字定义[a, b, c, d, e]
+            let [a, b, c, d, e] = ary;
+            console.log(a); //1
+            console.log(b); //2
+            console.log(c); //3
+            console.log(d); //undefined
+            console.log(e); //undefined
+        </script>
+    </body>
+</html>

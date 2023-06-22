@@ -1,18 +1,20 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Document</title>
-  </head>
-  <body>
-    <button id="btn">获取event对象</button>
-    <script>
-      var btn = document.getElementById("btn");
-      btn.onclick = function (e) {
-        e = e || window.event;
-        var target = e.target || e.srcElement;
-        console.log(target);
-      };
-    </script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+    </head>
+    <body>
+        <button id="btn">获取event对象</button>
+        <script>
+            var btn = document.getElementById("btn");
+            btn.onclick = function (e) {
+                e = e || window.event;
+                var target = e.target || e.srcElement;
+                console.log(target);
+            };
+        </script>
+    </body>
 </html>

@@ -1,0 +1,32 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8" />
+        <title>BindDOM数据绑定</title>
+    </head>
+
+    <body></body>
+</html>
+<script>
+    // 注册页面加载事件
+    window.onload = function () {
+        // 将dom元素添加到页面
+        document.body.appendChild(dom.element);
+        // 设置input元素的value值
+        dom.val();
+    };
+    // 定义构造器函数bindDOM
+    function BindDOM(element, options) {
+        // 定义初始数据
+        this.element = document.createElement(element);
+        this.value = options;
+    }
+    // 定义val()实现数据绑定
+    BindDOM.prototype.val = function () {
+        this.element.value = this.value;
+    };
+    // 实例化
+    var dom = new BindDOM("input", "数据绑定");
+</script>

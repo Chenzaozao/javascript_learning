@@ -1,21 +1,23 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      function Father() { }
-      Father.prototype.money = function () {
-        console.log(100000);
-      };
-      function Son() { }
-      Son.prototype = new Father();         
-      Son.prototype.constructor = Son;      
-      new Son().money();                    
-      Son.prototype.exam = function () { }; 
-      console.log(Father.prototype.exam);   
-    </script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function Father() {}
+            Father.prototype.money = function () {
+                console.log(100000);
+            };
+            function Son() {}
+            Son.prototype = new Father();
+            Son.prototype.constructor = Son;
+            new Son().money();
+            Son.prototype.exam = function () {};
+            console.log(Father.prototype.exam);
+        </script>
+    </body>
 </html>

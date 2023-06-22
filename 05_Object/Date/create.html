@@ -1,23 +1,25 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      // 方式1：没有参数，使用当前系统的当前时间作为对象保存的时间
-      var date1 = new Date();
-      
-      console.log(date1);
-      // 方式2：传入年、月、日、时、分、秒（月的范围是0~11，即真实月份-1）
-      var date2 = new Date(2023, 3, 19, 20, 48, 59);
-      
-      console.log(date2);
-      // 方式3：用字符串表示日期和时间
-      var date3 = new Date('2023-4-19 10:57:56');
-      
-      console.log(date3);
-    </script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // 方式1：没有参数，使用当前系统的当前时间作为对象保存的时间
+            var date1 = new Date();
+
+            console.log(date1);
+            // 方式2：传入年、月、日、时、分、秒（月的范围是0~11，即真实月份-1）
+            var date2 = new Date(2023, 3, 19, 20, 48, 59);
+
+            console.log(date2);
+            // 方式3：用字符串表示日期和时间
+            var date3 = new Date("2023-4-19 10:57:56");
+
+            console.log(date3);
+        </script>
+    </body>
 </html>

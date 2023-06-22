@@ -1,0 +1,23 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function Person() {}
+            Person.prototype = {
+                constructor: Person,
+                sayHello: function () {
+                    console.log("hello");
+                },
+            };
+            var p1 = new Person();
+
+            console.log(p1.constructor === Person);
+        </script>
+    </body>
+</html>

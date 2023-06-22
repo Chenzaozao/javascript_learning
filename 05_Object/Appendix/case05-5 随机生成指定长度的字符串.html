@@ -1,0 +1,39 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>随机生成指定长度的字符串</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function randomString(n) {
+                var str = getLetters();
+                var tmp = "",
+                    i = 0;
+                for (i = 0; i < n; i++) {
+                    tmp += str.charAt(Math.floor(Math.random() * str.length));
+                }
+                return tmp;
+            }
+            console.log(randomString(3));
+
+            function getLetters() {
+                var str = "";
+                for (var i = 0; i < 26; i++) {
+                    str += String.fromCharCode(97 + i);
+                }
+                return str;
+            }
+
+            // 把指定的 Unicode 值转换为字符串
+            // string.fromCharCode(48,49,...57) ==0,1,2,...9
+            // string.fromCharCode(65,66,...90) ==ABCD...Z
+            // string.fromCharCode(97,98,...122) ==abcd...z
+
+            // Math.floor() 返回小于等于x的最大整数:
+            // Math.rendom()返回介于 0（包含） ~ 1（不包含）：[0 ,1] 之间的一个随机数
+        </script>
+    </body>
+</html>

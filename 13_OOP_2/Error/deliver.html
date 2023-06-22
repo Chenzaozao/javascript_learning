@@ -1,24 +1,26 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      function foo1() {
-        foo2();
-        console.log('foo1');
-      }
-      function foo2() {
-        var o = {};
-        o.func();  
-      }
-      try {
-        foo1();
-      } catch (e) {
-        console.log('test');
-      }
-    </script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function foo1() {
+                foo2();
+                console.log("foo1");
+            }
+            function foo2() {
+                var o = {};
+                o.func();
+            }
+            try {
+                foo1();
+            } catch (e) {
+                console.log("test");
+            }
+        </script>
+    </body>
 </html>

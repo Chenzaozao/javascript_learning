@@ -1,0 +1,62 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <script src="jquery-3.4.1.min.js"></script>
+    </head>
+
+    <body>
+        <!-- 计算器页面结构 -->
+        <input type="text" id="num1" />
+        <!-- 定义“+、-、*、/”符号 -->
+        <select name="" id="fuhao">
+            <option value="1" onclick="">+</option>
+            <option value="2" onclick="">-</option>
+            <option value="3" onclick="">*</option>
+            <option value="4" onclick="">/</option>
+        </select>
+        <input type="text" id="num2" />
+        <!-- 定义“=”符号 -->
+        <input type="button" id="result" value="=" />
+        <!-- 计算结果展示 -->
+        <input type="text" id="showNum" />
+
+        <script>
+            function Calc(showNum, result) {
+                this.showNum = showNum;
+                this.result = result;
+                // 默认计算结果为空
+                document.getElementById(this.showNum).value = "";
+                document.getElementById(this.result).onclick = function () {
+                    // 获取数字num1、num2和计算符号
+                    var fuhao = document.getElementById("fuhao").value;
+                    var num1 = document.getElementById("num1").value;
+                    var num2 = document.getElementById("num2").value;
+                    if (fuhao == "1") {
+                        document.getElementById("showNum").value =
+                            parseInt(num1) + parseInt(num2);
+                    }
+                    if (fuhao == "2") {
+                        document.getElementById("showNum").value =
+                            parseInt(num1) - parseInt(num2);
+                    }
+                    if (fuhao == "3") {
+                        document.getElementById("showNum").value =
+                            parseInt(num1) * parseInt(num2);
+                    }
+                    if (fuhao == "4") {
+                        document.getElementById("showNum").value =
+                            parseInt(num1) / parseInt(num2);
+                    }
+                };
+            }
+            // 初始化计算器
+            var calc = new Calc("showNum", "result");
+        </script>
+    </body>
+</html>

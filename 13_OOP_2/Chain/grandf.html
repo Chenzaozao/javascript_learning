@@ -1,14 +1,26 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      function Person() { }
-      console.log(Person.prototype.__proto__);
-      console.log(Person.prototype.__proto__.constructor);
-    </script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function Person() {}
+            console.log(Person.prototype.__proto__);
+            console.log(Person.prototype.__proto__.constructor);
+            console.log(Person.prototype.__proto__ === Object.prototype);
+            var obj = {};
+            console.log(obj.__proto__ === Object.prototype);
+            console.log(Object.prototype.prototype);
+            console.log(obj.constructor === Object);
+            console.log(Person.constructor === Function);
+            console.log(Function.constructor === Function);
+            var func = new Function("a", "b", "return a+b;");
+            console.log(func(100, 200));
+            console.log(Function.prototype === Object.__proto__);
+        </script>
+    </body>
 </html>

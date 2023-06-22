@@ -1,0 +1,180 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>表格排序</title>
+        <style>
+            #ctn {
+                /* margin: 50px auto; */
+                border: 1px solid #ccc;
+            }
+
+            td,
+            th {
+                border: 1px solid #ccc;
+                width: 100px;
+                height: 60px;
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <button id="up">分数从小到大排列</button>
+        <button id="down">分数从大到小排列</button>
+        <table id="ctn">
+            <!-- <thead> -->
+            <!-- <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>学号</th>
+                <th>分数</th>
+            </tr> -->
+            <!-- </thead> -->
+            <!-- <tbody>
+            <tr>
+                <td>赵四</td>
+                <td>22</td>
+                <td>3</td>
+                <td>90</td>
+            </tr>
+        </tbody> -->
+        </table>
+
+        <script>
+            // 定义初始数据
+            var data = [
+                {
+                    name: "赵六",
+                    age: 29,
+                    num: 3,
+                    score: 91,
+                },
+                {
+                    name: "李四",
+                    age: 24,
+                    num: 1,
+                    score: 93,
+                },
+                {
+                    name: "王五",
+                    age: 21,
+                    num: 5,
+                    score: 96,
+                },
+                {
+                    name: "钱八",
+                    age: 26,
+                    num: 4,
+                    score: 97,
+                },
+                {
+                    name: "张三",
+                    age: 22,
+                    num: 2,
+                    score: 99,
+                },
+            ];
+
+            // 面向对象实现
+            function TableSort(id, data) {
+                // 接收传递参数元素id值和数据data
+                this.ctn = document.getElementById(id);
+                this.data = data;
+                // 表格初始化
+                this.init();
+            }
+            TableSort.prototype.init = function () {
+                // 初始化标题
+                var thead = this.initTitle();
+                // 初始化数据
+                var tbody = this.initTbody();
+                // 将thead 和 tbody追加到页面
+                this.ctn.appendChild(thead);
+                this.ctn.appendChild(tbody);
+                // 绑定事件 (排序)
+                this.addEvent();
+            };
+            // 封装表格标题方法initTitle()方法
+            TableSort.prototype.initTitle = function () {
+                var thead = document.createElement("thead");
+                var tag =
+                    "<tr>" +
+                    '<th type="name">姓名</th>' +
+                    '<th type="age">年龄</th>' +
+                    '<th type="num">学号</th>' +
+                    '<th type="score">分数</th>' +
+                    "</tr>";
+                thead.innerHTML = tag;
+                return thead;
+            };
+            // 封装表格内容方法initTbody()方法
+            TableSort.prototype.initTbody = function () {
+                var tbody = document.createElement("tbody");
+                var tag = "";
+                for (var i = 0; i < data.length; i++) {
+                    tag +=
+                        "<tr>" +
+                        "<td>" +
+                        data[i].name +
+                        "</td>" +
+                        "<td>" +
+                        data[i].age +
+                        "</td>" +
+                        "<td>" +
+                        data[i].num +
+                        "</td>" +
+                        "<td>" +
+                        data[i].score +
+                        "</td>" +
+                        " </tr>";
+                }
+                tbody.innerHTML = tag;
+                return tbody;
+            };
+            // 封装事件方法addEvent()事件
+            TableSort.prototype.addEvent = function () {
+                var that = this;
+                // 获取页面按钮
+                var up = document.getElementById("up");
+                var down = document.getElementById("down");
+                // 给“升序”、“降序”按钮添加点击事件 (需要重新渲染tbody)
+                // 降序
+                down.onclick = function () {
+                    var sortName = document
+                        .getElementsByTagName("th")[3]
+                        .getAttribute("type");
+                    data.sort(function (o1, o2) {
+                        var n1 = o1[sortName];
+                        var n2 = o2[sortName];
+                        return n2 - n1;
+                    });
+                    var newTbody = that.initTbody(data);
+                    var oldTbody = document.getElementsByTagName("tbody")[0];
+                    that.ctn.replaceChild(newTbody, oldTbody);
+                };
+                // 升序
+                up.onclick = function () {
+                    var sortName = document
+                        .getElementsByTagName("th")[3]
+                        .getAttribute("type");
+                    console.log(sortName);
+                    data.sort(function (o1, o2) {
+                        var n1 = o1[sortName];
+                        var n2 = o2[sortName];
+                        return n1 - n2;
+                    });
+                    var newTbody = that.initTbody(data);
+                    var oldTbody = document.getElementsByTagName("tbody")[0];
+                    that.ctn.replaceChild(newTbody, oldTbody);
+                };
+            };
+            // 实例化
+            var ts = new TableSort("ctn", data);
+        </script>
+    </body>
+</html>

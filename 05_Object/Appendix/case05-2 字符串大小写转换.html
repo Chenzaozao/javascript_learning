@@ -1,0 +1,25 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>字符串大小写转换</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            // toLocaleUpperCase、toUpperCase 转换成大写
+            // toLocaleLowerCase、toLowerCase 转换成小写
+            function toUpperCase(str) {
+                return str.toUpperCase();
+            }
+            function toLowerCase(str) {
+                return str.toLowerCase();
+            }
+            var str = "www.jb51.ITCASE.CN";
+            document.write("原字符串为：" + str + "<br/>");
+            document.write(toUpperCase(str) + "<br/>");
+            document.write(toLowerCase(str));
+        </script>
+    </body>
+</html>

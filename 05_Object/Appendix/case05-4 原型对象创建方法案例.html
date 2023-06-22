@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>原型对象创建方法案例</title>
+</head>
+<body>
+<pre>
+<script type="text/javascript">
+	function Clothes(name,color){
+		this.name=name;   // 姓名
+		this.color=color; // 衣服的颜色
+	}
+	Clothes.prototype.type="衣服"; //定义共享属性type=外套
+    Clothes.prototype.Clothes_fun=function(){
+		document.writeln("小美穿的"+clothes2.type+"是"+ clothes2.color+"的"+clothes2.name);
+	}
+	var clothes1=new Clothes("连衣裙","黑色");
+    var clothes2=new Clothes("吊带裙","黄色");
+    document.writeln(clothes1.color+"的"+clothes1.name+"是小丽穿的"+clothes1.type);
+    document.writeln(clothes2.color+"的"+clothes2.name+"是小美穿的"+clothes2.type);
+  	clothes2.Clothes_fun();
+</script>
+</pre>
+</body>
+</html>

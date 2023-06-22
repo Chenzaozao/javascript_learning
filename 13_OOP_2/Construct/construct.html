@@ -1,23 +1,25 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      function Person(name, age) {
-        this.name = name;
-        this.age = age;
-        this.sing = function () {
-          console.log('我会唱歌');
-        };
-      }
-      var p1 = new Person('张三', 18);
-      var p2 = new Person('李四', 19);
-      console.log(p1.name);		
-      console.log(p2.age);		
-      p2.sing();					   
-    </script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function Person(name, age) {
+                this.name = name;
+                this.age = age;
+                this.sing = function () {
+                    console.log("我会唱歌");
+                };
+            }
+            var p1 = new Person("张三", 18);
+            var p2 = new Person("李四", 19);
+            console.log(p1.name);
+            console.log(p2.age);
+            p2.sing();
+        </script>
+    </body>
 </html>

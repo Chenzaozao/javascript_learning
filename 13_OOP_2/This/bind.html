@@ -1,0 +1,21 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function method(a, b) {
+                console.log(this.name + a + b);
+            }
+            var name = "张三";
+            var test = method.bind({ name: "李四" }, "3", "4");
+            method("1", "2"); // 输出结果：张三12
+            test(); // 输出结果：李四34
+        </script>
+    </body>
+</html>

@@ -1,32 +1,51 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      var date = new Date();	 		       	// 基于当前日期时间创建Date对象
-      var year = date.getFullYear();		  // 获取年
-      var month = date.getMonth()+1;      	// 获取月
-      var day = date.getDate();         	// 获取日
-      // 通过数组将星期值转换为字符串
-      var week = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
-      // 输出date对象保存的时间
-      console.log('今天是' + year + '年' + month + '月' + day + '日 ' + week[date.getDay()]);
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var date = new Date(); // 基于当前日期时间创建Date对象
+            var year = date.getFullYear(); // 获取年
+            var month = date.getMonth() + 1; // 获取月
+            var day = date.getDate(); // 获取日
+            // 通过数组将星期值转换为字符串
+            var week = [
+                "星期日",
+                "星期一",
+                "星期二",
+                "星期三",
+                "星期四",
+                "星期五",
+                "星期六",
+            ];
+            // 输出date对象保存的时间
+            console.log(
+                "今天是" +
+                    year +
+                    "年" +
+                    month +
+                    "月" +
+                    day +
+                    "日 " +
+                    week[date.getDay()]
+            );
 
-      // 返回当前时间，格式为：时:分:秒，用两位数字表示
-      function getTime() {
-        var time = new Date();
-        var h = time.getHours();
-        h = h < 10 ? '0' + h : h;
-        var m = time.getMinutes();
-        m = m < 10 ? '0' + m : m;
-        var s = time.getSeconds();
-        s = s < 10 ? '0' + s : s;
-        return h + ':' + m + ':' + s;
-      }
-      console.log(getTime());		
-    </script>
-  </body>
+            // 返回当前时间，格式为：时:分:秒，用两位数字表示
+            function getTime() {
+                var time = new Date();
+                var h = time.getHours();
+                h = h < 10 ? "0" + h : h;
+                var m = time.getMinutes();
+                m = m < 10 ? "0" + m : m;
+                var s = time.getSeconds();
+                s = s < 10 ? "0" + s : s;
+                return h + ":" + m + ":" + s;
+            }
+            console.log(getTime());
+        </script>
+    </body>
 </html>

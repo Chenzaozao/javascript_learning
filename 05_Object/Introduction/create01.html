@@ -1,35 +1,37 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      var obj = {};
-      var stu1 = {
-        name: "小明",
-        age: 18,
-        sex: "男",
-        sayHello: function () {
-          console.log("Hello");
-        },
-      };
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var obj = {};
+            var stu1 = {
+                name: "小明",
+                age: 18,
+                sex: "男",
+                sayHello: function () {
+                    console.log("Hello");
+                },
+            };
 
-      console.log(stu1.name);
-      console.log(stu1["age"]);
-      stu1.sayHello();
-      stu1["sayHello"]();
+            console.log(stu1.name);
+            console.log(stu1["age"]);
+            stu1.sayHello();
+            stu1["sayHello"]();
 
-      var stu2 = {};
-      stu2.name = "Jack";
-      stu2.introduce = function () {
-        alert("My name is " + this.name);
-      };
-      alert(stu2.name);
-      stu2.introduce();
-    </script>
-  </body>
+            var stu2 = {};
+            stu2.name = "Jack";
+            stu2.introduce = function () {
+                alert("My name is " + this.name);
+            };
+            alert(stu2.name);
+            stu2.introduce();
+        </script>
+    </body>
 </html>

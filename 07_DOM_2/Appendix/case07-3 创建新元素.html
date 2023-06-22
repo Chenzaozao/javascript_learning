@@ -1,0 +1,17 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>创建新元素</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var creat_div = document.createElement("div"); //创建 <div> 元素节点
+            var eme_text = document.createTextNode("Hello World!"); // 创建文本节点
+            creat_div.appendChild(eme_text); //将文本节点添加到刚创建的新元素div中
+            document.body.appendChild(creat_div); //将新创建的元素<div>添加到<body>
+        </script>
+    </body>
+</html>
